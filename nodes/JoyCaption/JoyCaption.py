@@ -55,7 +55,7 @@ class LlamaModel:
         # LLM
         print_log(f"Loading LLM: {model_name}")
         text_model = AutoModelForCausalLM.from_pretrained(
-            MODEL_PATH, device_map="auto", torch_dtype=torch.bfloat16
+            MODEL_PATH, device_map="auto", torch_dtype=torch.bfloat16, output_loading_info=True
         )
         text_model.eval()
 
